@@ -24,7 +24,10 @@ namespace mission8_4._1.Controllers
         {
             return View();
         }
-
+        public IActionResult Quadrants()
+        {
+            return View();
+        }
         //[HttpGet]
         //public IActionResult /*Name of input page here*/ ()
         //{
@@ -40,7 +43,7 @@ namespace mission8_4._1.Controllers
         //    return View("Confirmation", f);
         //}
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     }
 
 }
