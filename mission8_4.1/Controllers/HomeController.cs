@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using mission8_4._1.Models;
 using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -26,23 +27,42 @@ namespace mission8_4._1.Controllers
         }
         public IActionResult Quadrants()
         {
-            return View();
+            var quadrants = context.Responses
+                .Include(x => x.Category)
+                .Where(x => x.Completed == false)
+                .ToList();
+            return View(quadrants);
         }
-        //[HttpGet]
-        //public IActionResult /*Name of input page here*/ ()
-        //{
-        //    return View();
-        //}
+        [HttpGet]
+        public IActionResult Update(int taskid)
+        {
+            ViewBag.Categories = context.Categories.ToList();
 
-        //[HttpPost]
-        //public IActionResult /*Name of input page here*/ (Forum f)
-        //{
-        //    context.Add(f);
-        //    context.SaveChanges();
+            var task = context.Responses.Single(x => x.TaskId == taskid);
+            return View("INSERTUPDATEVIEWHERE", task);
+        }
 
-        //    return View("Confirmation", f);
-        //}
+        [HttpPost]
+        public IActionResult Update(Forum f)
+        {
+            context.Update(f);
+            context.SaveChanges();
 
+            return RedirectToAction("Quadrants");
+        }
+        [HttpGet]
+        public IActionResult Delete(int taskid)
+        {
+            var task = context.Responses.Single(x => x.TaskId == taskid);
+            return View(task);
+        }
+        [HttpPost]
+        public IActionResult Delete(Forum f)
+        {
+            context.Responses.Remove(f);
+            context.SaveChanges();
+            return RedirectToAction("Quadrants");
+        }
         //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     }
 

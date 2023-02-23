@@ -27,27 +27,35 @@
         <div class="col-1 border bg-light justify-content-center sideways">
             <h3>Important</h3>
         </div>
+
+        
         <div class="col-5 border bg-light justify-content-center">
             <h3>Quadrant 1</h3>
             <br />
-            <p>
-                Task 1&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-                <br />Task 2&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-                <br />Task 3&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-                <br />Task 4&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-            </p>
+            @foreach (var x in Model)
+            {
+                <p>
+                    @x.Task &nbsp; @x.DueDate &nbsp;
+                    <a a asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Update</a>
+                    &nbsp;
+                    <a a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                </p>
+            }
         </div>
         <div class="col-5 border bg-light justify-content-lg-center">
             <h3>Quadrant 2</h3>
 
             <br />
             <p>
-                Task 1&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-                <br />Task 2&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-                <br />Task 3&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-                <br />Task 4&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
+                @foreach (var x in Model)
+                {
+            <p>
+                @x.Task &nbsp; @x.DueDate &nbsp;
+                <a a asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Update</a>
+                &nbsp;
+                <a a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
             </p>
-
+                }
         </div>
     </div>
 
@@ -60,24 +68,30 @@
             <h3>Quadrant 3</h3>
 
             <br />
-            <p>
-                Task 1&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-                <br />Task 2&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-                <br />Task 3&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-                <br />Task 4&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-            </p>
+            @foreach (var x in Model)
+            {
+        <p>
+            @x.Task &nbsp; @x.DueDate &nbsp;
+            <a a asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Update</a>
+            &nbsp;
+            <a a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+        </p>
+            }
 
         </div>
         <div class="col-5 border bg-light justify-content-md-center">
             <h3>Quadrant 4</h3>
 
             <br />
-            <p>
-                Task 1&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-                <br />Task 2&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-                <br />Task 3&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-                <br />Task 4&nbsp;<a>Update</a>&nbsp;<a>Delete</a>
-            </p>
+            @foreach (var x in Model)
+            {
+        <p>
+            @x.Task &nbsp; @x.DueDate &nbsp;
+            <a a asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Update</a>
+            &nbsp;
+            <a a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+        </p>
+            }
 
         </div>
     </div>

@@ -15,7 +15,7 @@ namespace mission8_4._1.Models
 
         }
 
-        public DbSet<Context> Responses { get; set; }
+        public DbSet<Forum> Responses { get; set; }
         public DbSet<Category> Categories { get; set; }
 
         //Seed the data 
@@ -44,7 +44,7 @@ namespace mission8_4._1.Models
                         CategoryId = 4,
                         Task = "Finish Project",
                         DueDate = 2 - 24 - 2023,
-                        Quadrant = "Not important not urgent",
+                        Quadrant = "Not Important Not Urgent",
                         Completed = false,
                     }
                 );
