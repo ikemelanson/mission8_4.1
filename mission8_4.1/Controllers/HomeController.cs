@@ -12,10 +12,12 @@ namespace mission8_4._1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private Context context { get; set; }
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, Context x)
         {
             _logger = logger;
+            context = x;
         }
 
         public IActionResult Index()
@@ -23,10 +25,22 @@ namespace mission8_4._1.Controllers
             return View();
         }
 
+        //[HttpGet]
+        //public IActionResult /*Name of input page here*/ ()
+        //{
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public IActionResult /*Name of input page here*/ (Forum f)
+        //{
+        //    context.Add(f);
+        //    context.SaveChanges();
+
+        //    return View("Confirmation", f);
+        //}
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
+
 }
