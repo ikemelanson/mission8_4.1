@@ -25,7 +25,13 @@ namespace mission8_4._1.Controllers
         {
             return View();
         }
+        [HttpGet]
         public IActionResult AddTasks()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddTasks(Forum task)
         {
             return View();
         }
