@@ -29,6 +29,7 @@ namespace mission8_4._1.Models
 
             mb.Entity<Forum>().HasData(
 
+                //seed the data
                     new Forum
                     {
                         TaskId = 1,

@@ -1,9 +1,11 @@
 ﻿@{
-    ViewData["Title"] = "New Task";
+    ViewData["Title"] = "Task Form";
 }
 
 @model mission8_4._1.Models.Forum;
 
+
+@*FOrm to add and update a task*@
 <div>
     <form method="post">
         
@@ -24,6 +26,7 @@
         <label asp-for="Completed">Completed:</label>
         <input type="checkbox" asp-for="Completed"/><br />
 
+        @*Create a dropdown option for each category in the database*@
         <label asp-for="CategoryId">Category:</label>
         <select asp-for="CategoryId">
             @foreach(Category x in ViewBag.Categories)
@@ -32,8 +35,7 @@
             }
         </select>
 
-        @*<input type="hidden" asp-for="TaskId" />*@
-
+        @*Submit the form*@
         <button type="submit">Submit</button>
 
 
