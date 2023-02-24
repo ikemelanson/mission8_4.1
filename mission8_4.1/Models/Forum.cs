@@ -13,7 +13,7 @@ namespace mission8_4._1.Models
         public int TaskId { get; set; }
         [Required]
         public string Task { get; set; }
-        public int DueDate { get; set; }
+        public string DueDate { get; set; }
         [Required]
         public string Quadrant { get; set; }
         public bool Completed { get; set; }
