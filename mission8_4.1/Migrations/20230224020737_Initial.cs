@@ -65,12 +65,12 @@ namespace mission8_4._1.Migrations
             migrationBuilder.InsertData(
                 table: "Responses",
                 columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
-                values: new object[] { 1, 1, false, "3/10/2023", "1", "Clean Car" });
+                values: new object[] { 1, 1, false, "2023-02-26", "1", "Clean Car" });
 
             migrationBuilder.InsertData(
                 table: "Responses",
                 columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
-                values: new object[] { 2, 4, false, "2/24/2023", "4", "Finish Project" });
+                values: new object[] { 2, 4, false, "2023-02-24", "4", "Finish Project" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Responses_CategoryId",

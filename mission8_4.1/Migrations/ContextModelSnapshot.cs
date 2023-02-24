@@ -86,7 +86,7 @@ namespace mission8_4._1.Migrations
                             TaskId = 1,
                             CategoryId = 1,
                             Completed = false,
-                            DueDate = "3/10/2023",
+                            DueDate = "2023-02-26",
                             Quadrant = "1",
                             Task = "Clean Car"
                         },
@@ -95,7 +95,7 @@ namespace mission8_4._1.Migrations
                             TaskId = 2,
                             CategoryId = 4,
                             Completed = false,
-                            DueDate = "2/24/2023",
+                            DueDate = "2023-02-24",
                             Quadrant = "4",
                             Task = "Finish Project"
                         });

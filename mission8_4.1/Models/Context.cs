@@ -34,7 +34,7 @@ namespace mission8_4._1.Models
                         TaskId = 1,
                         CategoryId = 1,
                         Task = "Clean Car",
-                        DueDate = "3/10/2023",
+                        DueDate = "2023-02-26",
                         Quadrant = "1",
                         Completed = false,
                     },
@@ -43,7 +43,7 @@ namespace mission8_4._1.Models
                         TaskId = 2,
                         CategoryId = 4,
                         Task = "Finish Project",
-                        DueDate = "2/24/2023",
+                        DueDate = "2023-02-24",
                         Quadrant = "4",
                         Completed = false,
                     }
