@@ -1,6 +1,7 @@
 ﻿@{
     @model List<Forum>
 }
+<!--this styling makes the side of the quadrant have wording that goes vertical -->
 <style>
     .sideways {
         writing-mode: vertical-rl;
@@ -8,12 +9,12 @@
         transform: rotateZ(180deg);
     }
 </style>
-<div class="container">
+<div class="container"><!--Beautiful grid system-->
     <div class="row">
         <div class="col-1 border bg-light justify-content-center">
         </div>
         <div class="col-5 border bg-light justify-content-md-center">
-            <h1>Urgent</h1>
+            <h1>Urgent</h1><!--Makes vertical titles for side of the grid-->
 
         </div>
         <div class="col-5 border bg-light justify-content-md-center">
@@ -29,7 +30,7 @@
         
         <div class="col-5 border bg-light justify-content-center">
             <h3>Quadrant 1</h3>
-            <br />
+            <br /><!--this loop makes a new task for every associated task in the form-->
             @foreach (var x in Model)
             {
                 <p>
@@ -94,41 +95,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-@*<table class="table table-bordered table-striped">
-
-    <thead class="font-weight-bold">
-        <tr>
-            <td>Category</td>
-            <td>Title</td>
-            <td>Year</td>
-            <td>Director</td>
-            <td>Rating</td>
-            <td>Edited</td>
-            <td>Lent</td>
-            <td>Notes</td>
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (var x in Model)
-        {
-            <tr>
-                <td>@x.Category.CategoryName</td>
-                <td>@x.Title</td>
-                <td>@x.Year</td>
-                <td>@x.Director</td>
-                <td>@x.Rating</td>
-                <td>@x.Edited</td>
-                <td>@x.Lent</td>
-                <td>@x.Notes</td>
-
-                <td><a asp-controller="Home" asp-action="Edit" asp-route-movieid="@x.MovieID">Edit</a></td>
-                <td><a asp-controller="Home" asp-action="Delete" asp-route-movieid="@x.MovieID">Delete</a></td>
-            </tr>
-        }
-    </tbody>
-</table>-->*@
