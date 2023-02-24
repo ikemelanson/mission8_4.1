@@ -28,11 +28,21 @@ namespace mission8_4._1.Controllers
         [HttpGet]
         public IActionResult AddTasks()
         {
+            ViewBag.Categories = context.Categories.ToList();
+
             return View();
         }
         [HttpPost]
         public IActionResult AddTasks(Forum task)
         {
+            if (ModelState.IsValid)
+            {
+                context.Add(task);
+                context.SaveChanges();
+                return RedirectToAction("Quadrants");
+            }
+
+            ViewBag.Categories = context.Categories.ToList();
             return View();
         }
         public IActionResult Quadrants()
