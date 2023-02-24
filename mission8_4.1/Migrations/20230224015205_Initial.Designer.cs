@@ -8,7 +8,7 @@ using mission8_4._1.Models;
 namespace mission8_4._1.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230223231009_Initial")]
+    [Migration("20230224015205_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -65,8 +65,8 @@ namespace mission8_4._1.Migrations
                     b.Property<bool>("Completed")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("DueDate")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("DueDate")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Quadrant")
                         .IsRequired()
@@ -88,8 +88,8 @@ namespace mission8_4._1.Migrations
                             TaskId = 1,
                             CategoryId = 1,
                             Completed = false,
-                            DueDate = -2030,
-                            Quadrant = "Important Urgent",
+                            DueDate = "3/10/2023",
+                            Quadrant = "1",
                             Task = "Clean Car"
                         },
                         new
@@ -97,8 +97,8 @@ namespace mission8_4._1.Migrations
                             TaskId = 2,
                             CategoryId = 4,
                             Completed = false,
-                            DueDate = -2045,
-                            Quadrant = "Not Important Not Urgent",
+                            DueDate = "2/24/2023",
+                            Quadrant = "4",
                             Task = "Finish Project"
                         });
                 });

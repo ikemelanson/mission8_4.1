@@ -25,10 +25,10 @@
         <input type="checkbox" asp-for="Completed"/><br />
 
         <label asp-for="CategoryId">Category:</label>
-        <select>
+        <select asp-for="CategoryId">
             @foreach(Category x in ViewBag.Categories)
             {
-                <option value="x.CategoryId">@x.CategoryName</option>
+                <option value="@x.CategoryId">@x.CategoryName</option>
             }
         </select>
 

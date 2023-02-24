@@ -26,7 +26,7 @@ namespace mission8_4._1.Migrations
                     TaskId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Task = table.Column<string>(nullable: false),
-                    DueDate = table.Column<int>(nullable: false),
+                    DueDate = table.Column<string>(nullable: true),
                     Quadrant = table.Column<string>(nullable: false),
                     Completed = table.Column<bool>(nullable: false),
                     CategoryId = table.Column<int>(nullable: false)
@@ -65,12 +65,12 @@ namespace mission8_4._1.Migrations
             migrationBuilder.InsertData(
                 table: "Responses",
                 columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
-                values: new object[] { 1, 1, false, -2030, "Important Urgent", "Clean Car" });
+                values: new object[] { 1, 1, false, "3/10/2023", "1", "Clean Car" });
 
             migrationBuilder.InsertData(
                 table: "Responses",
                 columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
-                values: new object[] { 2, 4, false, -2045, "Not Important Not Urgent", "Finish Project" });
+                values: new object[] { 2, 4, false, "2/24/2023", "4", "Finish Project" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Responses_CategoryId",
