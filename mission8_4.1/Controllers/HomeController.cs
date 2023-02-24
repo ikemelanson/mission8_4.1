@@ -8,6 +8,12 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
+// Created By: Olivia Morgan
+// Devon Wolsleger
+// Parker Warner
+// Ike Melanson
+// Taylor Sabin
+
 namespace mission8_4._1.Controllers
 {
     public class HomeController : Controller
@@ -21,7 +27,7 @@ namespace mission8_4._1.Controllers
             context = x;
         }
 
-        public IActionResult Index()
+        public IActionResult Index() //Home page
         {
             return View();
         }
@@ -33,9 +39,9 @@ namespace mission8_4._1.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddTasks(Forum addTask)
+        public IActionResult AddTasks(Forum addTask) //Add new items to the matrix
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) //Check if valid
             {
                 context.Add(addTask);
                 context.SaveChanges();
@@ -43,10 +49,10 @@ namespace mission8_4._1.Controllers
             }
 
             ViewBag.Categories = context.Categories.ToList();
-            return View();
+            return View(addTask);
         }
         [HttpGet]
-        public IActionResult Quadrants()
+        public IActionResult Quadrants() // Display matrix
         {
             var quadrants = context.Responses
                 .Include(x => x.Category)
@@ -55,7 +61,7 @@ namespace mission8_4._1.Controllers
             return View(quadrants);
         }
         [HttpGet]
-        public IActionResult Update(int taskid)
+        public IActionResult Update(int taskid) // Update a task
         {
             ViewBag.Categories = context.Categories.ToList();
 
@@ -72,7 +78,7 @@ namespace mission8_4._1.Controllers
             return RedirectToAction("Quadrants");
         }
         [HttpGet]
-        public IActionResult Delete(int taskid)
+        public IActionResult Delete(int taskid) //Delete a task confirmation page
         {
             var task = context.Responses.Single(x => x.TaskId == taskid);
             return View(task);
