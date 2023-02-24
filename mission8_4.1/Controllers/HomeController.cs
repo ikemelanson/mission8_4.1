@@ -45,6 +45,7 @@ namespace mission8_4._1.Controllers
             ViewBag.Categories = context.Categories.ToList();
             return View();
         }
+        [HttpGet]
         public IActionResult Quadrants()
         {
             var quadrants = context.Responses

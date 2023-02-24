@@ -57,7 +57,7 @@ namespace mission8_4._1
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{taskid?}");
+                    pattern: "{controller=Home}/{action=Quadrants}/{taskid?}");
             });
         }
     }
