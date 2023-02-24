@@ -25,6 +25,10 @@ namespace mission8_4._1.Controllers
         {
             return View();
         }
+        public IActionResult AddTasks()
+        {
+            return View();
+        }
         public IActionResult Quadrants()
         {
             var quadrants = context.Responses
