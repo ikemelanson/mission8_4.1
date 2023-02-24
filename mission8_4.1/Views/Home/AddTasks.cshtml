@@ -14,7 +14,12 @@
         <input type="date" asp-for="DueDate"/><br />
 
         <label asp-for="Quadrant">Quadrant</label>
-        <input asp-for="Quadrant" /><br />
+        <select asp-for="Quadrant">
+            <option value="1">Important Urgent</option>
+            <option value="2">Important Not Urgent</option>
+            <option value="3">Not Important Urgent</option>
+            <option value="4">Not Important Not Urgent</option>
+        </select>
 
         <label asp-for="Completed">Completed:</label>
         <input type="checkbox" asp-for="Completed"/><br />
