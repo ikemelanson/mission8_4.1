@@ -35,7 +35,7 @@ namespace mission8_4._1.Models
                         CategoryId = 1,
                         Task = "Clean Car",
                         DueDate = "3/10/2023",
-                        Quadrant = "Important Urgent",
+                        Quadrant = "1",
                         Completed = false,
                     },
                     new Forum
@@ -44,7 +44,7 @@ namespace mission8_4._1.Models
                         CategoryId = 4,
                         Task = "Finish Project",
                         DueDate = "2/24/2023",
-                        Quadrant = "Not Important Not Urgent",
+                        Quadrant = "4",
                         Completed = false,
                     }
                 );

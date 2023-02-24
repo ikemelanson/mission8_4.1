@@ -33,11 +33,11 @@ namespace mission8_4._1.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddTasks(Forum task)
+        public IActionResult AddTasks(Forum addTask)
         {
             if (ModelState.IsValid)
             {
-                context.Add(task);
+                context.Add(addTask);
                 context.SaveChanges();
                 return RedirectToAction("Quadrants");
             }
@@ -59,7 +59,7 @@ namespace mission8_4._1.Controllers
             ViewBag.Categories = context.Categories.ToList();
 
             var task = context.Responses.Single(x => x.TaskId == taskid);
-            return View("INSERTUPDATEVIEWHERE", task);
+            return View("AddTasks", task);
         }
 
         [HttpPost]
