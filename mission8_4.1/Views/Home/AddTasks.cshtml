@@ -1,5 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "New Task";
 }
+
+@model mission8_4._1.Models.Forum;
+
+<div>
+    <form method="post">
+        
+        <label asp-for="Task">Task Name:</label>
+        <input type="search" asp-for="Task" /><br />
+
+        <label asp-for="DueDate">Due Dat:</label>
+        <input type="date" asp-for="DueDate"/><br />
+
+        <label asp-for="Quadrant">Quadrant</label>
+        <input asp-for="Quadrant" /><br />
+
+        <label asp-for="Completed">Completed:</label>
+        <input type="checkbox" asp-for="Completed"/><br />
+
+        <label asp-for="Category">Category:</label>
+        <select>
+            @foreach(Category x in ViewBag.Categories)
+            {
+                <option value="x.CategoryId">@x.Category</option>
+            }
+        </select>
+    </form>
+</div>
