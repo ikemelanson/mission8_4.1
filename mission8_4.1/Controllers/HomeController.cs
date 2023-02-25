@@ -75,10 +75,10 @@ namespace mission8_4._1.Controllers
             context.Update(f);
             context.SaveChanges();
 
-            return RedirectToAction("Quadrants");
+            return RedirectToAction("Quadrants"); //Redirect back to the tasks matrix after updating record
         }
         [HttpGet]
-        public IActionResult Delete(int taskid) //Delete a task confirmation page
+        public IActionResult Delete(int taskid) //Delete task confirmation page
         {
             var task = context.Responses.Single(x => x.TaskId == taskid);
             return View(task);
@@ -88,9 +88,8 @@ namespace mission8_4._1.Controllers
         {
             context.Responses.Remove(f);
             context.SaveChanges();
-            return RedirectToAction("Quadrants");
+            return RedirectToAction("Quadrants"); //Redirect back to the tasks matrix after deleting record
         }
-        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     }
 
 }

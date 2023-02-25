@@ -35,17 +35,53 @@ namespace mission8_4._1.Models
                         TaskId = 1,
                         CategoryId = 1,
                         Task = "Clean Car",
+                        DueDate = "2023-02-25",
+                        Quadrant = "3",
+                        Completed = false,
+                    },
+                    new Forum
+                    {
+                        TaskId = 2,
+                        CategoryId = 3,
+                        Task = "Practice Presentation",
+                        DueDate = "2023-03-06",
+                        Quadrant = "2",
+                        Completed = false,
+                    },
+                    new Forum
+                    {
+                        TaskId = 3,
+                        CategoryId = 4,
+                        Task = "Write Talk",
                         DueDate = "2023-02-26",
                         Quadrant = "1",
                         Completed = false,
                     },
                     new Forum
                     {
-                        TaskId = 2,
-                        CategoryId = 4,
+                        TaskId = 4,
+                        CategoryId = 1,
+                        Task = "Yeet",
+                        DueDate = "2023-02-28",
+                        Quadrant = "4",
+                        Completed = false,
+                    },
+                    new Forum
+                    {
+                        TaskId = 5,
+                        CategoryId = 1,
+                        Task = "Make Dinner",
+                        DueDate = "2023-03-28",
+                        Quadrant = "4",
+                        Completed = true,
+                    },
+                    new Forum
+                    {
+                        TaskId = 6,
+                        CategoryId = 2,
                         Task = "Finish Project",
                         DueDate = "2023-02-24",
-                        Quadrant = "4",
+                        Quadrant = "2",
                         Completed = false,
                     }
                 );

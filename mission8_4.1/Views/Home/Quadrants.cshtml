@@ -1,6 +1,8 @@
-﻿@{
-    @model List<Forum>
+﻿@{ViewData["Title"] = "Matrix";
 }
+
+@model List<Forum>
+
 <!--this styling makes the side of the quadrant have wording that goes vertical -->
 <style>
     .sideways {
@@ -33,12 +35,15 @@
             <br /><!--this loop makes a new task for every associated task in the form-->
             @foreach (var x in Model)
             {
-                <p>
-                    @x.Task &nbsp; @x.DueDate &nbsp;
-                    <a a asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Update</a>
-                    &nbsp;
-                    <a a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
-                </p>
+                if (x.Quadrant == "1")
+                {
+                    <p>
+                        @x.Task &nbsp; @x.DueDate &nbsp;
+                        <a a asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Update</a>
+                        &nbsp;
+                        <a a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                    </p>
+                }
             }
         </div>
         <div class="col-5 border bg-light justify-content-lg-center">
@@ -48,12 +53,15 @@
             <p>
                 @foreach (var x in Model)
                 {
-            <p>
-                @x.Task &nbsp; @x.DueDate &nbsp;
-                <a a asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Update</a>
-                &nbsp;
-                <a a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
-            </p>
+                    if(x.Quadrant == "2")
+                    {
+                        <p>
+                            @x.Task &nbsp; @x.DueDate &nbsp;
+                            <a a asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Update</a>
+                            &nbsp;
+                            <a a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                        </p>
+                    }
                 }
         </div>
     </div>
@@ -69,14 +77,16 @@
             <br />
             @foreach (var x in Model)
             {
-        <p>
-            @x.Task &nbsp; @x.DueDate &nbsp;
-            <a a asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Update</a>
-            &nbsp;
-            <a a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
-        </p>
+                if (x.Quadrant == "3")
+                {
+                    <p>
+                        @x.Task &nbsp; @x.DueDate &nbsp;
+                        <a a asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Update</a>
+                        &nbsp;
+                        <a a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                    </p>
+                }
             }
-
         </div>
         <div class="col-5 border bg-light justify-content-md-center">
             <h3>Quadrant 4</h3>
@@ -84,12 +94,15 @@
             <br />
             @foreach (var x in Model)
             {
-        <p>
-            @x.Task &nbsp; @x.DueDate &nbsp;
-            <a a asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Update</a>
-            &nbsp;
-            <a a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
-        </p>
+                if (x.Quadrant == "4")
+                {
+                    <p>
+                        @x.Task &nbsp; @x.DueDate &nbsp;
+                        <a a asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Update</a>
+                        &nbsp;
+                        <a a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                    </p>
+                }
             }
 
         </div>
